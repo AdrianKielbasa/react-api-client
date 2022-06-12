@@ -2,7 +2,7 @@
 /* eslint-disable react/require-default-props */
 import React from 'react';
 
-import { Button } from './Button';
+import Button from './Button';
 import './header.css';
 
 type User = {
@@ -16,12 +16,7 @@ interface HeaderProps {
   onCreateAccount: () => void;
 }
 
-export function Header({
-  user,
-  onLogin,
-  onLogout,
-  onCreateAccount,
-}: HeaderProps) {
+const Header = ({ user, onLogin, onLogout, onCreateAccount }: HeaderProps) => {
   return (
     <header>
       <div className="wrapper">
@@ -72,4 +67,6 @@ export function Header({
       </div>
     </header>
   );
-}
+};
+
+export default Header;

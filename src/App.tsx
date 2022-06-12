@@ -1,26 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { ThemeProvider } from 'styled-components';
+import theme from './theme/theme';
+import Button from './components/atoms/Button/Button';
+import GlobalStyle from './theme/GlobalStyle';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+  <ThemeProvider theme={theme}>
+    <GlobalStyle />
+    <Button primary>Button</Button>
+  </ThemeProvider>
+);
 
 export default App;
