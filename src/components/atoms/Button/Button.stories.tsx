@@ -10,3 +10,7 @@ export default {
 export const Primary: ComponentStory<typeof Button> = () => (
   <Button primary>Button</Button>
 );
+
+export const Success: ComponentStory<typeof Button> = () => (
+  <Button success>Button</Button>
+);

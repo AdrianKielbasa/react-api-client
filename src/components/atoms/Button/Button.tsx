@@ -1,17 +1,24 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 interface Props {
-  primary: boolean;
+  primary?: boolean;
+  success?: boolean;
 }
 
 const Button = styled.button<Props>`
   font-size: 16px;
   line-height: 20px;
-  color: white;
-  padding: 6px 12px;
+  color: ${({ theme }) => theme.white};
+  padding: 7px 13px;
   background-color: ${({ theme }) => theme.blue};
-  border: 1px solid ${({ theme }) => theme.blue};
+  border: none;
   border-radius: 6px;
+
+  ${({ success, theme }) =>
+    success &&
+    css`
+      background-color: ${theme.green};
+    `}
 `;
 
 export default Button;
